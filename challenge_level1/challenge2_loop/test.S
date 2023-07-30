@@ -21,11 +21,11 @@ loop:
   add t4, t1, t2
   addi t0, t0, 12
   addi t6, t6, 1
-  beq t3, t4, check        # check if sum is correct
+  beq t3, t4, check        # If the sum is correct go to check, otherwise fail
   j fail
   
 check :
-  ble t6, t5, loop
+  ble t6, t5, loop     # If the number of sums checked are less than 3 then only go to loop, otherwise pass
   j pass
 
 test_end:
